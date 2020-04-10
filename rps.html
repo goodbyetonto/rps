@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang = "us-na">
+<head>
+    <meta charst = "UTF-8">
+    <title>
+
+    </title>
+</head>
+<body>
+    <script type = text/javascript>
+
+        var user;
+        var cpu;
+        var rock = "r";
+        var paper = "p";
+        var scissors = "s";
+        var random = ["r", "p", "s"];
+        var promptUser = "Would you like to play Rock Paper Scissors?";
+        var wins = 0;
+        var computerScore = 0;
+        var gameCounter = 0 ;
+        var draws = 0;
+        var losses = 0;
+        var computerLosses = 0;
+
+        confirm(promptUser);
+
+        for (var j = 0; j < 9; j++) {
+            //store user choice memory
+            user = prompt(user);
+            //store cumputer choice
+            cpu = rock;
+            //cpu = random[Math.floor(Math.random()*2)];
+            gameCounter++;
+            //wins
+            if((user === rock && cpu === scissors) || (user === paper && cpu === rock) || (user === scissors && cpu === rock) ) { 
+                
+                wins++;
+                alert("You picked " + user + "& the opponent picked " + cpu + ". Wins: " + wins + ". Game Count: " + gameCounter + ".");
+
+                    if (wins > 5) {
+                        alert("You have enough luck to survive today. Maybe you'll find money on the ground... If you go outside.")
+                    }   else if (wins === losses) {
+                            alert("You have some decent luck. But, you are no four leaf clover. You won 5 and lost 5." );
+        }
+                //draw
+            }  else if (user === rock && cpu === rock || user === paper && cpu === paper || user === scissors && user === scissors) {
+                draws++;
+                alert("You drew with your opponent. Draw counter: " + draws + ". Game Counter: " + gameCounter + ".");
+                
+                    if (wins === losses) {
+                        alert("You have some decent luck. But, you are no four leaf clover. You won 5 and lost 5." );
+        }
+                //loss
+            } else {
+                losses++;
+                
+                alert("You Lost! The opponent picked " + cpu + " and you picked " + user + ". Game count: " + gameCounter + ". Losses : " + losses + ".");
+                    if (losses > 5) {
+                        alert("You suck. Go pray for more luck.");
+                        j = j+5;
+                    }  /* if (wins === 5 && losses === 5 && wins !== 0 && wins !== 1 && wins !==  2 && wins !== 3 && wins !== 4
+                    && losses !== 0 && losses !== 0 && losses !== 0 && losses !== 0 && losses !== 0) {
+                            alert("You have some decent luck. But, you are no four leaf clover. You won 5 and lost 5." ); */
+        }
+
+            }
+            
+        }
+        alert("Wins: " + wins + ". Losses: " + losses + ". Draws: " + draws + ".")
+        
+
+
+
+    </script>
+</body>
+</html>
